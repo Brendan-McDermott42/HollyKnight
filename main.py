@@ -10,5 +10,5 @@ if __name__ == '__main__':
         if inp == "exit":
             playing = False
             break
-        game.play(inp)
+        game.play()
 

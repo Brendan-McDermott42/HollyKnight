@@ -1,5 +1,6 @@
 from characters.character import Character
 from player_creator import PlayerCreator
+from story_elements.story_start import StoryStart
 
 
 class Player(Character):
@@ -43,5 +44,6 @@ class Player(Character):
             print(self.get_player_stats())
 
 
-    def play(self):
+    def play(self, story_element=None):
         self._check_for_stat_points()
+

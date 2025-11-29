@@ -1,6 +1,7 @@
 
 class PlayerCreator:
 
+    """This is admittedly bad code. oh well. its pretty contained"""
     @staticmethod
     def _check_input(target, stat_points):
         result = 0
@@ -26,18 +27,20 @@ class PlayerCreator:
         }
         if player_name == "unknown":
             print("What... is your name?")
-            inp = input()
+            inp = ""
+            while not inp:
+                inp = input()
             player["player_name"] = inp
-            player["has_changed"] = True
             print(f"your name is {inp} (y or n)")
-            inp = input()
+            while inp not in ["y", "n"]:
+                inp = input()
             print("tough" if inp == 'n' else f"cool {inp}, nice to meet you")
 
         # do player stats
         if stat_points > 0:
             print("you must assign your stat points to your character.")
             print(f"you currently have {stat_points} points.")
-            print("you should decide what you would like to assign to health, constitution, dexterity, intelligence, wisdom.")
+            print("you should decide what you would like to assign to \n - health, \n - constitution, \n - dexterity, \n - intelligence, \n - wisdom.")
             print("type which stat you would like to assign first")
             while stat_points > 0:
                 inp = input()
